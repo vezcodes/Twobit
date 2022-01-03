@@ -1,71 +1,8 @@
-import os
-import json
-import urllib.request
-import requests
-import time
-
-from colorama import Fore, Style
-from time import sleep
-
-THIS_VERSION = "1.1"
-
-banner = Fore.BLUE + Style.BRIGHT + f'''
-    
-████████╗░██╗░░░░░░░██╗░█████╗░██████╗░██╗████████╗
-╚══██╔══╝░██║░░██╗░░██║██╔══██╗██╔══██╗██║╚══██╔══╝
-░░░██║░░░░╚██╗████╗██╔╝██║░░██║██████╦╝██║░░░██║░░░
-░░░██║░░░░░████╔═████║░██║░░██║██╔══██╗██║░░░██║░░░
-░░░██║░░░░░╚██╔╝░╚██╔╝░╚█████╔╝██████╦╝██║░░░██║░░░
-░░░╚═╝░░░░░░╚═╝░░░╚═╝░░░╚════╝░╚═════╝░╚═╝░░░╚═╝░░░
-    By Vez Codez
-    https://github.com/VezCodes
-    '''
-def check_for_update():
-    pass
-
-def tool():
-    os.system('cls')
-    print(banner)
-    print(Fore.GREEN + f"Successfully loaded the tool!\nPlease wait for the first following update!")
-
-def login():
-    print(banner)
-    os.system(f'title [ Twobit by Vez Codez v{THIS_VERSION}]')
-
-    registerURL = ('https://canary.discord.com/api/webhooks/927498438151639060/y0ZlNy0kxIhcQjgTjp0BH_4tMpHA2FhZen4bJ22jrnFxgVLC3txCv_ICz7hiT90odSh3')
-
-    url = ('http://vezcodez.c1.biz/private/login.json')
-
-    r = requests.get(url)
-
-    y = r.json()  
-    
-    credentials = input(Fore.CYAN + f"]>> Please insert your personal ID to login, or type register to sign-up > ")
-
-    if credentials in y["ids"]:
-        print(Fore.GREEN + f"Successfully logged in as {credentials}\nContinuing in 3 seconds. . .")
-        time.sleep(3)
-        tool()
-
-    
-    elif credentials == "register":
-        os.system("cls")
-        print("1. Go to https://numbergenerator.org/random-8-digit-number-generator\n2. Generate an ID\n3. Put in your gamer tag with the ID\nExample: sfyx12345678\n[!] NO CAPITAL LETTERS!!")
-        print(" ")
-        register = input(Fore.YELLOW + f"]>> Please enter your personal login ID as shown above > ")
-        
-        
-        data = {"content": f'''@everyone new sign-up request: `{register}`'''}
-        response = requests.post(registerURL, json=data)
-        time.sleep(1)
-        print("Successfully sent request!\nThis process can take up to 6 hours, so be patient!\nClosing in 3 seconds. . .")
-        time.sleep(3)
-        os.system("exit()")
-
-
-    else:
-        print("[!] An error occured.")
-
-
-
-login()
+import base64, codecs
+magic = 'aW1wb3J0IG9zDQppbXBvcnQganNvbg0KaW1wb3J0IHVybGxpYi5yZXF1ZXN0DQppbXBvcnQgcmVxdWVzdHMNCmltcG9ydCB0aW1lDQppbXBvcnQgYmFzZTY0DQoNCg0KZnJvbSBjb2xvcmFtYSBpbXBvcnQgRm9yZSwgU3R5bGUNCmZyb20gdGltZSBpbXBvcnQgc2xlZXANCg0KVEhJU19WRVJTSU9OID0gIjEuMSINCg0Kb3Muc3lzdGVtKCdjbHMnKQ0KDQpiYW5uZXIgPSBGb3JlLkJMVUUgKyBTdHlsZS5CUklHSFQgKyBmJycnDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg4paI4paI4paI4paI4paI4paI4paI4paI4pWX4paR4paI4paI4pWX4paR4paR4paR4paR4paR4paR4paR4paI4paI4pWX4paR4paI4paI4paI4paI4paI4pWX4paR4paI4paI4paI4paI4paI4paI4pWX4paR4paI4paI4pWX4paI4paI4paI4paI4paI4paI4paI4paI4pWXDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIOKVmuKVkOKVkOKWiOKWiOKVlOKVkOKVkOKVneKWkeKWiOKWiOKVkeKWkeKWkeKWiOKWiOKVl+KWkeKWkeKWiOKWiOKVkeKWiOKWiOKVlOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVlOKVkOKVkOKWiOKWiOKVl+KWiOKWiOKVkeKVmuKVkOKVkOKWiOKWiOKVlOKVkOKVkOKVnQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICDilpHilpHilpHilojilojilZHilpHilpHilpHilpHilZrilojilojilZfilojilojilojilojilZfilojilojilZTilZ3ilojilojilZHilpHilpHilojilojilZHilojilojilojilojilojilojilabilZ3ilojilojilZHilpHilpHilpHilojilojilZHilpHilpHilpENCiAgICAgICAgICAgICAgICAg'
+love = 'VPNtVPNtVPNtVPNtVPNt4cnE4cnE4cnE4cnV4cnV4cJE4cnE4cnE4cnE4cnE4cnE4cnV4cnV4cnV4cnV4cJH4cJD4cnV4cnV4cnV4cnV4cJE4cnE4cnV4cnV4cJE4cnE4cnE4cnV4cnV4cJE4cnV4cnV4cJH4cJD4cJD4cnV4cnV4cJK4cnV4cnV4cJE4cnE4cnE4cnE4cnV4cnV4cJE4cnE4cnE4cnEQDbtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVBXJxrXJxrXJxrXJvBXJvBXIxrXJxrXJxrXJxrXJxrXJxrXIzhXJvBXJvBXIyBXIarXJxrXIzhXJvBXJvBXIyBXIarXJxrXIzhXJvBXJvBXJvBXJvBXJvBXIyBXIarXJvBXJvBXJvBXJvBXJvBXJvBXIchXIarXJvBXJvBXIxrXJxrXJxrXJxrXJvBXJvBXIxrXJxrXJxrXJxD0XVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPQvycUvycUvycUvyMevyMQvyM3vycUvycUvycUvycUvycUvycUvyMevyMQvyM3vycUvycUvycUvyMevyMQvyM3vycUvycUvycUvyMevyMQvyMQvyMQvyMQvyM3vycUvyMevyMQvyMQvyMQvyMQvyMQvyM3vycUvyMevyMQvyM3vycUvycUvycUvyMevyMQvyM3vycUvycUvycRAPvNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVRW5VSMyrvOQo2Eyrt0XVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtVPNtnUE0pUZ6Yl9anKEbqJVhL29gY1MyrxAiMTImQDbtVPNtWlpaQDbAPt0XMTIzVUEio2jbXGbAPvNtVPOipl5mrKA0MJ0bW2AfplpcQDbtVPNtpUWcoaDbLzShozIlXD0XVPNtVUOlnJ50XRMipzHhE1WSEH4tXlOzVyA1L2Ayp3AzqJkfrFOfo2SxMJDtqTuyVUEio2juKT5DoTIup2Htq2ScqPOzo3VtqTuyVTMcpaA0VTMioTkiq2yhMlO1pTEuqTHuVvxAPt0XMTIzVTkiM2yhXPx6QDbtVPNtqTygMF5moTIy'
+god = 'cCgyKQ0KICAgIHByaW50KGJhbm5lcikNCiAgICBvcy5zeXN0ZW0oZid0aXRsZSBbIFR3b2JpdCBieSBWZXogQ29kZXogdntUSElTX1ZFUlNJT059XScpDQoNCiAgICByZWdpc3RlclVSTCA9IGJhc2U2NC5iNjRkZWNvZGUoJ2FIUjBjSE02THk5allXNWhjbmt1WkdselkyOXlaQzVqYjIwdllYQnBMM2RsWW1odmIydHpMemt5TnpRNU9EUXpPREUxTVRZek9UQTJNQzk1TUZwc1Rua3dhM2hKYUdOUmFtZFVhbkF3UWtoZk5IUk5jRWhCTWtab1dtVnVOR0pLTWpKcWNtNUdlR2RXVEVNemRIaERkbDlKUTNvM2FHbFVPVEJ2WkZOb013PT0nKQ0KICAgIHVybCA9IGJhc2U2NC5iNjRkZWNvZGUoJ2FIUjBjRG92TDNabGVtTnZaR1Y2TG1NeExtSnBlaTl3Y21sMllYUmxMMnh2WjJsdUxtcHpiMjQ9JykNCg0KICAgIHIgPSByZXF1ZXN0cy5nZXQodXJsKQ0KDQogICAgeSA9IHIuanNvbigpICANCiAgICANCiAgICBjcmVkZW50aWFscyA9IGlucHV0KEZvcmUuQ1lBTiArIGYiXT4+IFBsZWFzZSBpbnNlcnQgeW91ciBwZXJzb25hbCBJRCB0byBsb2dpbiwgb3IgdHlwZSByZWdpc3RlciB0byBzaWduLXVwID4gIikNCg0KICAgIGlmIGNyZWRlbnRpYWxzIGluIHlbImlkcyJdOg0KICAgICAgICBwcmludChGb3JlLkdSRUVOICsgZiJTdWNjZXNzZnVsbHkgbG9nZ2VkIGluIGFzIHtjcmVkZW50aWFsc31cbkNvbnRpbnVpbmcgaW4gMyBzZWNvbmRzLiAuIC4iKQ0KICAgICAgICB0aW1lLnNsZWVwKDMpDQogICAgICAgIHRvb2woKQ0KDQogICAgDQogICAgZWxpZiBjcmVkZW50aWFscyA9PSAicmVnaXN0ZXIiOg0KICAgICAgICBvcy5zeXN0ZW0oImNscyIpDQogICAgICAgIHByaW50KCIxLiBHbyB0byBodHRwczovL251bWJlcmdlbmVyYXRv'
+destiny = 'pv5ipzpipzShMT9gYGtgMTyanKDgoaIgLzIlYJqyozIlLKEipykhZv4tE2IhMKWuqTHtLJ4tFHEpowZhVSO1qPOcovO5o3IlVTquoJIlVUEuMlO3nKEbVUEbMFOWESkhEKuuoKOfMGbtp2M5rQRlZmD1Awp4KT5oVI0tGx8tD0SDFIEOGPOZEIEHEIWGVFRvXD0XVPNtVPNtVPOjpzyhqPtvVPVcQDbtVPNtVPNtVUWyM2ymqTIlVQ0tnJ5jqKDbEz9lMF5MEHkZG1ptXlOzVy0+CvODoTIup2HtMJ50MKVtrJ91pvOjMKWmo25uoPOfo2qcovOWEPOuplOmnT93ovOuLz92MFN+VPVcQDbtVPNtVPNtVN0XVPNtVPNtVPNAPvNtVPNtVPNtMTS0LFN9VUfvL29hqTIhqPV6VTLaWlqNMKMypayiozHtozI3VUAcM24gqKNtpzIkqJImqQbtLUglMJqcp3Eypa1tWlpasD0XVPNtVPNtVPOlMKAjo25mMFN9VUWypKIyp3EmYaOip3DbpzIanKA0MKWIHxjfVTcmo249MTS0LFxAPvNtVPNtVPNtqTygMF5moTIypPtkXD0XVPNtVPNtVPOjpzyhqPtvH3IwL2Imp2M1oTk5VUAyoaDtpzIkqJImqPSpoyEbnKZtpUWiL2ImplOwLJ4tqTSeMFO1pPO0olN2VTuiqKWmYPOmolOvMFOjLKEcMJ50VIkhD2kip2yhMlOcovNmVUAyL29hMUZhVP4tYvVcQDbtVPNtVPNtVUEcoJHhp2kyMKNbZlxAPvNtVPNtVPNto3Zhp3ymqTIgXPWyrTy0XPxvXD0XQDbAPvNtVPOyoUAyBt0XVPNtVPNtVPOjpzyhqPtvJlSqVRyhqzSfnJDtFHDvXD0XVPNtVPNtVPOipl5mrKA0MJ0bVzAfplVcQDbtVPNtVPNtVUOlnJ50XTWuoz5ypvxAPvNtVPNtVPNtL3WyMTIhqTyuoUZtCFOcoaO1qPuTo3WyYxAMDH4tXlOzVy0+CvODoTIup2HtnJ5mMKW0VUyiqKVtpTIlp29hLJjtFHDtqT8toT9anJ4fVT9lVUE5pTHtpzIanKA0MKVtqT8tp2yaov11pPN+VPVcQDbAPt0XQDcfo2qcovtc'
+joy = '\x72\x6f\x74\x31\x33'
+trust = eval('\x6d\x61\x67\x69\x63') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x6c\x6f\x76\x65\x2c\x20\x6a\x6f\x79\x29') + eval('\x67\x6f\x64') + eval('\x63\x6f\x64\x65\x63\x73\x2e\x64\x65\x63\x6f\x64\x65\x28\x64\x65\x73\x74\x69\x6e\x79\x2c\x20\x6a\x6f\x79\x29')
+eval(compile(base64.b64decode(eval('\x74\x72\x75\x73\x74')),'<string>','exec'))
