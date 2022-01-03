@@ -3,7 +3,7 @@
 ## A tool with login scheme and multiple usages.
 
 ### Current Version:
-> v1.1
+> v2.1
 
 ## Installation
 ```
