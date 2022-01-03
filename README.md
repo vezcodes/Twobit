@@ -5,6 +5,8 @@
 ### Current Version:
 > v2.1
 
+## [Discord](https://discord.gg/CJ8Ra6Z2St)
+
 ## Installation
 ```
 Download the latest release from https://github.com/vezcodes/Twobit/releases/download/Twobit/Twobit.rar
