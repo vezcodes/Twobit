@@ -3,7 +3,7 @@
 ## A tool with login scheme and multiple usages.
 
 ### Current Version:
-> v3.7
+> v4.5
 
 ## [Discord](https://discord.gg/CJ8Ra6Z2St)
 
